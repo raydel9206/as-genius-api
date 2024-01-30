@@ -15,8 +15,7 @@ import { HandlebarsAdapter } from '@nestjs-modules/mailer/dist/adapters/handleba
 @Module({
   imports: [
     ConfigModule.forRoot({
-      load: [EnvConfig],
-      validationSchema: envSchemaJoi,
+      envFilePath: ['.env'],
     }),
     MongooseModule.forRoot(process.env.MONGODB, {
       dbName: process.env.DB_NAME,
